@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.project3.SQLClientAppController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+    <GridPane fx:id="OverallGridPane" hgap="10" vgap="10">
+        <GridPane GridPane.rowIndex="0" GridPane.columnIndex="0" vgap="5" hgap="5">
+            <Label fx:id="ConnectionDetailsLabel" GridPane.rowIndex="0" GridPane.columnIndex="0" text="Connection Details"/>
+            <Label fx:id="PropertiesFileLabel" GridPane.rowIndex="1" GridPane.columnIndex="0" text="Properties File"/>
+            <ComboBox fx:id="PropertiesFileComboBox" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+            <Label GridPane.rowIndex="2" GridPane.columnSpan="2" minHeight="25"/>
+            <Label fx:id="UsernameLabel" GridPane.rowIndex="3" GridPane.columnIndex="0" text="Username"/>
+            <TextField fx:id="UsernameTextField" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+            <Label fx:id="PasswordLabel" GridPane.rowIndex="4" GridPane.columnIndex="0" text="Password"/>
+            <PasswordField fx:id="PasswordTextField" GridPane.rowIndex="4" GridPane.columnIndex="1" />
+        </GridPane>
+        <GridPane GridPane.rowIndex="0" GridPane.columnIndex="1" vgap="5">
+            <Label fx:id="SQLTextAreaLabel" GridPane.rowIndex="0" GridPane.columnSpan="2" text="Enter An SQL Command"/>
+            <TextArea fx:id="SQLCommandTextArea" GridPane.rowIndex="1" GridPane.columnSpan="2"/>
+            <Button fx:id="ClearButton" GridPane.rowIndex="2" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" text="Clear SQL Command" onMouseEntered="#MouseEntered" onMouseExited="#MouseExited" onMousePressed="#MousePressed" onMouseReleased="#MouseReleased" onAction="#Clear_ButtonClicked"/>
+            <Button fx:id="ExecuteButton" GridPane.rowIndex="2" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" text="Execute SQL Command" onMouseEntered="#MouseEntered" onMouseExited="#MouseExited" onMousePressed="#MousePressed" onMouseReleased="#MouseReleased" onAction="#Execute_ButtonClicked"/>
+        </GridPane>
+        <GridPane GridPane.rowIndex="1" GridPane.columnSpan="2" hgap="10" vgap="5">
+            <Button fx:id="ConnectButton" GridPane.rowIndex="0" GridPane.columnIndex="0" text="Connect to Database" onMouseEntered="#MouseEntered" onMouseExited="#MouseExited" onMousePressed="#MousePressed" onMouseReleased="#MouseReleased" onAction="#Connect_ButtonClicked"/>
+            <TextField fx:id="ConnectStatusTextField" GridPane.rowIndex="0" GridPane.columnIndex="1" editable="false" style="-fx-text-fill: red; -fx-highlight-fill: null; -fx-highlight-text-fill: null;"/>
+            <Label GridPane.rowIndex="1" GridPane.columnSpan="2"/>
+            <Label fx:id="SQLExecutionLabel" GridPane.rowIndex="2" GridPane.columnSpan="2" text="SQL Execution Result Window"/>
+            <TableView fx:id="SQLExecutionResultTable" GridPane.rowIndex="3" GridPane.columnSpan="2" editable="false"/>
+            <Button fx:id="ClearExecutionButton" GridPane.rowIndex="4" GridPane.columnIndex="0" text="Clear Result Window" onMouseEntered="#MouseEntered" onMouseExited="#MouseExited" onMousePressed="#MousePressed" onMouseReleased="#MouseReleased" onAction="#ClearExecuteResults_ButtonClicked"/>
+        </GridPane>
+    </GridPane>
+</VBox>
